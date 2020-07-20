@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8"/>
+    <title>Tudo sobre Google Glass</title>
+    
+    <link rel="stylesheet" href="_css/estilo.css"/>
+    <link rel="stylesheet" href="_css/form.css"/>
+
+<script type="text/javascript" src="_javascript/funcoes.js"></script>
+
+<script type="text/javascript">
+    function calc_total() {
+        var qtd = parseInt(document.getElementById('cQtd').value);
+        var total = qtd * 1500;
+        document.getElementById('cPrt').value = total;
+    }
+</script>
+
+</head>
+
+<body>
+<div id="interface"> 
+    
+<header id="cabecalho">
+    <hgroup>
+    <h1>Google Glass</h1>
+    <h2>A revolução do Google está chegando</h2>
+    </hgroup>
+
+    <img id="icone" src="_imagens/contato.png">
+
+    <nav id="menu">
+        <h1>Menu Principal</h1>
+            <ul>
+                <li onmouseover="mudaIcone('_imagens/home.png')" onmouseout="mudaIcone('_imagens/contato.png')"><a href="index.html">Home</a></li>
+                    
+                <li onmouseover="mudaIcone('_imagens/especificacoes.png')" onmouseout="mudaIcone('_imagens/contato.png')"><a href="specs.html">Especificações</a></li>
+                    
+                <li onmouseover="mudaIcone('_imagens/fotos.png')" onmouseout="mudaIcone('_imagens/contato.png')"><a href="fotos.html">Fotos</a></li>
+                    
+                <li onmouseover="mudaIcone('_imagens/multimidia.png')" onmouseout="mudaIcone('_imagens/contato.png')"><a href="multimidia.html">Multimídia</a></li>
+                    
+                <li onmouseover="mudaIcone('_imagens/contato.png')" onmouseout="mudaIcone('_imagens/contato.png')"><a href="fale-conosco.html">Fale conosco</a></li>
+            </ul>
+    </nav>
+</header>
+
+<!-- ------------------------------------------------------------ -->
+
+<section id="corpo-full">
+    <header id="cabecalho-artigo">
+        <h3>Glass > Contato</h3>
+        <h1>Formulário de Contato</h1>
+        <h2>por Gustavo Guanabara</h2>
+        <h3 class="direita">Atualizado em 01/Maio/2013</h3>
+    </header>
+</section>
+
+<!-- ------------------------------------------------------------ -->
+
+<form method="post" id="fContatp" action="mailto:pauloguilhermefurtado@gmail.com" oninput="calc_total();">
+    
+    <!-- Usuário -->
+
+    <fieldset id="usuario">
+        <legend>Identificação do Usuário</legend>
+            <p><label for="cNome">Nome:</label> <input type="text" name="tNome" id="cNome" size="20" maxlength="30" placeholder="Nome Completo"/></p>
+
+            <p><label for="cSenha">Senha:</label> <input type="password" name="tSenha" id="cSenha" size="8" maxlength="8" placeholder="8 dígitos"/></p>
+
+            <p><label for="cMail">E-mail:</label> <input type="email" name="tMail" id="cMail" size="20" maxlength="20" placeholder="exemplo@gmail.com"></p>
+            
+            <fieldset id="genero">
+                <legend>Gênero:</legend>
+                <input type="radio" name="tGenero" id="cNeutro"><label for="cNeutro">Neutro</label> <br>
+                <input type="radio" name="tGenero" id="cFem"><label for="cFem">Feminino</label> <br>
+                <input type="radio" name="tGenero" id="cMas"><label for="cMas">Masculino</label> 
+            </fieldset>
+
+            <p><label for="cData">Data de Nascimento:</label> <input type="date" name="tData" id="cData"></p>
+    </fieldset>
+
+    <!-- Endereço -->
+   
+    <fieldset id="endereco">
+        <legend>Endereço do Usuário</legend>
+            <p><label for= "cEnd">Logradouro:</label> <input type="text" name="tEnd" id="cEnd" size="20" maxlength="100" placeholder="Rua, Av, Travessa, ..."></p> <br>
+
+            <p><label for="cNum">Número:</label> <input type="number" name="tNum" id="cNum" min="0" max="99999"></p> <br>
+            
+            <p><label for="cEstado">Estado:</label> 
+                <select name="tEstado" id="cEstado"> 
+                    <optgroup label="Cirandeiras">
+                        <option value="AM">Amazonas</option>
+                    </optgroup>
+                    
+                    <optgroup label="Cavalo Manco">
+                        <option>Pará</option>
+                    </optgroup>
+                </select> 
+            </p> <br>
+            
+            <p><label for="cCidade">Cidade:</label> <input type="text" name="tCidade" id="cCidade" size="20" maxlength="50" placeholder="ex: Manaus" list="cidades">
+                <datalist id="cidades">
+                    <option>Belém</option>
+                    <option>Manaus</option>
+                    <option>São Gabriel da Caxoeira</option>
+                    <option>Alter do Chão</option>
+                </datalist>
+            </p>
+
+    </fieldset>
+
+    <!-- Mensagem -->
+
+    <fieldset id="mensagem">    
+        <legend>Mensagem do Usuário</legend>
+            <p><label for="cGrau">Grau de Urgência:</label> <input type="range" name="tGrau" id="cGrau" min="0" max="10" step="2"></p> <br>
+            <p><label for="">Mensagem:</label> <textarea name="tMens" id="cMens" cols="45" rows="5"></textarea> </p>
+    </fieldset>
+
+    <!-- -Pedido- -->
+
+    <fieldset id="pedido">
+        <legend>Quero um Google Glass</legend>
+            <p><input type="checkbox" name="tPed" id="cPed" checked>
+                <label for="cPed">Gostaria de adquirir um Google Glass quando disponível</label></p><br>
+            <p><label for="cCor">Cor:</label> <input type="color" name="tCor" id="cCor" value="#0000ff"/></p><br>
+            <p><label for="cQtd">Quantidade:</label> <input type="number" name="tQtd" id="cQtd" min="0" max="5"/></p><br>
+            <p><label for="cPrt">Preço Total: R$</label> <input type="text" name="tPrt" id="cPrt" placeholder="Total a pagar" readonly/></p>
+    </fieldset>
+
+    <!-- <input type="submit" value="Enviar"/> -->
+    <input type="image" name="tBotao" id="botao-enviar" src="_imagens/botao-enviar.png"/> 
+</form>
+
+<!-- ------------------------------------------------------------ -->
+
+<footer id="rodape">
+<p>Copyright&copy; 2013 - by Gustavo Guanabara<br>
+<a href="http://facebook.com/cursosemvideo" target="_blank">Facebook</a> | 
+<a href="http://twitter.com/cursosemvideo" target="_blank">Twitter</a></p>
+</footer>
+
+</div>
+</body>
+</hyml>
