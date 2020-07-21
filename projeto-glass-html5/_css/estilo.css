@@ -253,6 +253,10 @@ aside#lateral h2 {
 	padding: 9px;
 }
 
+aside#lateral video#filme2{
+	width: 300px;
+}
+
 /* ------------------------------------------------------- */
 
 footer#rodape {
