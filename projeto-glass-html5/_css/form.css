@@ -23,7 +23,7 @@ input:hover, textarea:hover {
 	background-color: #dddddd;
 }
 
-input#botao-enviar{
+img#botao-enviar{
 	display: block;
 	margin: auto;
 }
